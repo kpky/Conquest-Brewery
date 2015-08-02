@@ -1,5 +1,11 @@
 $gold: #96915b;
+$maroon: #8a2728;
+$white: #ffffff;
+$black: #000000;
+$gray: #cccccc;
 
+$mobile: 365px;
+$mid-mobile: 500px;
 $tablet: 680px;  
 $desktop: 960px;
 
@@ -70,122 +76,320 @@ h1, h2, h3, h4, h5, h6{
 .wrapper{
     display: block;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1200px;
 }
 
 header{
-    background-image: url(../img/conquest_header_art.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-        img{
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-    }
-}
-
-
-.slogan h1{
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    font-size: 1.2em;
-    text-align: center;
-    text-transform: uppercase;
+    width: 100%;
+    position: relative;
+    @include clearfix;
 
     @include breakpoint($tablet){
-        font-size: 1.6em;
-    }
+    margin-top: 65px;
+}
 
-      @include breakpoint($desktop){
-        font-size: 2.2em;
+   
+}
+
+.castle img{
+    display: block;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+
+.slogan{
+
+    
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+        line-height: 1;
+
+        @include breakpoint($desktop){
+            top: 16%;
+        }
+    
+
+    h1{
+        display: none;
+
+        @include breakpoint($mid-mobile){
+        display: block;
+        color: white;
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        font-size: 1.1em;
+        text-align: center;
+        font-family:'Homemade Apple', 'serif';
+        text-transform: none;
+        line-height: 1.3;
+        }
+
+        @include breakpoint($mid-mobile){
+            font-size: 1.7em;
+        }
+
+        @include breakpoint($tablet){
+            font-size: 2.4em;
+        }
+
+        @include breakpoint($desktop){
+            font-size: 3.4em;
+            
+            
+        }
     }
 }
 
-.primary_navigation{
-        margin-bottom: 10%;
-        margin-top: 10%; 
+.primary_navigation_m{
+        display: none;
 
 
+        @include breakpoint($tablet){
+        display: block;    
+        margin-bottom: 0;
+        margin-top: 0; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        background: $white;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        @include breakpoint($desktop){
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+    } 
 
         ul{
             display: block;
             margin: 0 auto;
             text-align: center;
             text-transform: uppercase;
+            width: 100%;
+
+
+
+            @include breakpoint($mid-mobile){
+                width: 100%;
+            }
+
+            @include breakpoint($desktop){
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            li{ 
+                display: inline-block;
+                padding: 0.5%;
+                width: 23%;
+                
+                @include breakpoint($desktop){
+                padding: 0.5%;
+                width: 15%;
+                text-align: center;
+                }
+            }
 
             a{
+                display: inline-block;
                 text-decoration: none;
-                color: #000000;
+                color: $maroon;
+                font-size: 0.5em;
+                
+                padding: 0.3em 0.5em;
 
-                  @include breakpoint($tablet){
-                     font-size: 1.2em;
+                @include breakpoint($tablet){
+                font-size: 1em;
+              
+                }
+                  @include breakpoint($desktop){
+                     font-size: 0.9em;
+                     border: 1px solid $maroon;
+                     width: 125px;
             }
         }
     }
 }
 
-.primary_navigation li{
+
+.primary_navigation_m a:hover{
+    color: #ffffff;
+    background: #000000;
+
+
+}
+
+.primary_navigation_m li{
+
+        // width: 50%;
+        // margin: 0 auto;
 
       @include breakpoint($desktop){
         display: inline-block;
-        padding-left: 1%;
-        padding-right: 1%;
+    
+    }
+    
+}
+
+.primary_navigation_m{
+
+    @include breakpoint($desktop){
+        margin-bottom: 2%;
+    
+    }
+}
+
+
+
+.logo{
+
+    display: block;
+    width: 50%;
+    margin: 2% auto;
+
+    @include breakpoint($mid-mobile){
+    width: 33%;
+   
+
+}
+    
+    img{
+        width: 100%;
+    
     }
     
 
 }
 
-.primary_navigation{
+.homepage_buttons{
+    @include clearfix;
+    width: 94%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
 
     @include breakpoint($desktop){
-        margin-top: 5%;
-        margin-bottom: 5%;
+        padding-bottom: 0;
+        padding-top: 1%;
+    }
+
+    a{
+        color: #ffffff;
+        background: #000000;
+        text-decoration: none;
+        vertical-align: top;
+        display: inline-block;
+        border: 2px solid $gold;
+        width: 40%;
+        margin: 0 0.5em 1em auto;
+        padding-top: 0.7em;
+        padding-right: 1%;
+        padding-left: 1%;
+        height: 75px;
+        font-size: 0.8em;
+        text-align: center;
+        font-family:'Homemade Apple', 'serif';
+
+        @include breakpoint($mid-mobile){
+            width: 28%;
+            font-size: 1em;
+            height: 90px;
+
+        }
+
+        @include breakpoint($tablet){
+            
+            font-size: 1.2em;
+            height: 100px;
+
+        }
+
+        @include breakpoint($desktop){
+            color: #000000;
+            background: #ffffff;
+            width: 200px;
+            height: 120px;
+            font-size: 1.6em;
+            margin: 0;
+            display: inline-block;
+            margin: 1.5%;
+        }
+
     }
 }
 
+
+.homepage_buttons a:hover{
+
+    color: #ffffff;
+    background: #000000;
+    text-transform: none;
+    font-family:'Homemade Apple', 'serif';
+}
+
+
+
 .building{
     display: block;
-    width: 100%;
+    width: 94%;
+    margin: 3%;
+    -webkit-filter: grayscale(100%); filter: grayscale(100%);
 
     @include breakpoint($desktop){
-        width: 60%;
+        width: 50%;
         float: left;
         margin-bottom: 2%;
+        margin-top: 3%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
 }
 
 .about_section{
+    padding-bottom: 15%;
+
     @include breakpoint($desktop){
-        margin-bottom: 3%;
+        
         position: relative;
+        clear: both;
+
+        @include clearfix;
     }
 }
 
-.about_article h1{
+.about_title h1{
     text-align: center;
     margin-bottom: 0;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
 
     @include breakpoint($desktop){
         margin-top: 0;
         font-size: 2.8em;
-        text-align: right;
+        text-align: left;
+        padding-left: 7%;
     }
 }
 
 .about_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    bottom: 85%;
-    right: 19%;
+    bottom: 88%;
+    left: 2%;
 
     }
 
@@ -193,16 +397,18 @@ header{
 
 
 .about_article{
-    margin: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
 
     @include breakpoint($desktop){
-        width: 34%;
+        width: 44%;
         float: left;
-        margin-top: 0;
+        margin: 3%;
+        
     }
 
     p{
-        font-size: 0.7em;
+        font-size: 0.9em;
 
         @include breakpoint($tablet){
         font-size: 1em;
@@ -214,12 +420,14 @@ header{
 .invite{
     @include breakpoint($desktop){
         clear: both;
+        width: 100%;
+        padding-top: 2%;
     }
 }
 
 .invite h3{
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: 1em;
@@ -229,13 +437,13 @@ header{
     }
 
     @include breakpoint($desktop){
-        font-size: 1.3em;
-        text-align: left;
-        margin: 0 1%;
-        width: 42%;
-        position: absolute;
-        bottom: 4%;
-        left: 3%;
+
+        font-size: 1em;
+        text-align: center;
+        width: 100%;
+        margin: 2% auto;
+        font-family: 'Homemade Apple', 'serif';
+        text-transform: none;
         
     }
 
@@ -246,11 +454,10 @@ header{
 
      @include breakpoint($desktop){
             display: block;
-            clear: both;
-            position: absolute;
-            bottom: 5%;
-            left: 45%;
-            
+            width: 100%;
+            text-align: center;
+            padding-bottom: 15%;
+        
         }
 
 }
@@ -260,15 +467,33 @@ header{
     @include breakpoint($desktop){
         display: inline-block;
 
+
     }
 
+}
+
+.social_media img{
+    width: 60%;
+}
+
+.tastingroom_section{
+    @include clearfix;
+    margin-right: 3%;
+    margin-left: 3%;
+
+
+    @include breakpoint($desktop){
+    margin-right: 0;
+    margin-left: 0; 
+    }
 }
 
 
 .tr_photos img{
     display: block;
-    width: 100%;
-    margin: 2% auto;
+    width: 87%;
+    margin: 2% 6%;
+    -webkit-filter: grayscale(100%); filter: grayscale(100%);
 
       @include breakpoint($tablet){
         width: 31.333%;
@@ -279,6 +504,9 @@ header{
 }
 
 .tastingroom_title{
+
+    clear: both;
+
     @include breakpoint($desktop){
         padding-left: 7%;
         clear: both;
@@ -289,7 +517,7 @@ header{
 }
 
 .tastingroom_title h1{
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
     text-align: center;
     margin-bottom: 0;
 
@@ -300,20 +528,21 @@ header{
         float: left;
         width: 45%;
         text-align: left;
+
     }
 
 }
 
 .tr_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
         position: absolute;
         top: 0;
         left: 2%;
-        width: 6%;
+        width: 5%;
         margin-top: 2.2em;
     }
 }
@@ -337,6 +566,8 @@ header{
 .tastingroom_title h6{
     text-align: center;
     margin-bottom: 0;
+    font-size: 0.9em;
+    margin: 3%;
 
     @include breakpoint($tablet){
         font-size: 1.3em;
@@ -349,20 +580,20 @@ header{
 }
 
 .tastingroom_divider{
-    text-align: center;
+    @include clearfix;
+    padding-bottom: 15%;
 
     @include breakpoint($desktop){
         width: 100%;
         margin-top: 0;
-        margin-bottom: 3%;
-        border-top: 3px solid $gold;
+        border-top: 2px solid $gold;
         clear: both;
 
-        @include clearfix;
+    
     }
         
         li{
-            font-size: 0.7em;
+            font-size: 0.9em;
 
             @include breakpoint($tablet){
             font-size: 1em;
@@ -370,42 +601,86 @@ header{
     }
 }
 
+.tastingroom_divider ul{
+    text-align: left;
+}
+
 .on_tap, .upcoming_brews{
     display: block;
-    width: 44%;
-    float: left;
-    padding: 3%;
+    width: 65%;
+    margin: 2% auto;
+    background-color: $gray;
+    padding: 5%;
+
+    @include breakpoint($tablet){
+        width: 35%;
+        display: inline-block;
+        margin: 2%;
+        vertical-align: top;
+        height: 250px;
+    }
 
     @include breakpoint($desktop){
-        width: 33.333%;
+        width: 22.333%;
         float: left;
         padding: 0;
+        margin-left: 2%;
+        padding: 3%;
+        padding-top: 1%;
     }
+}
+
+.upcoming_brews ul{
+    display: block;
+    margin: 0 auto;
 }
 
 .hours{
+
+    display: block;
+    width: 65%;
+    margin: 2% auto;
+    background-color: $gray;
+    padding: 5%;
+
+    @include breakpoint($tablet){
+        width: 35%;
+        display: inline-block;
+        margin: 2%;
+        vertical-align: top;
+        height: 250px;
+    }
     @include breakpoint($desktop){
-        width: 33.333%;
+        width: 22.333%;
         float: left;
+        margin-left: 4%;
+        padding: 3%;
+        padding-top: 1%;
     }
 }
 
+.on_tap h3, .upcoming_brews h3, .hours h3{
+    font-family: 'Homemade Apple', 'serif';
+    text-transform: none;
+}
+
 .brewers_section{
-    @include breakpoint($desktop){
-        @include clearfix;
-    }
+    padding-bottom: 15%; 
+    
+    @include clearfix;
+    
 }
 
 .brewers_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    top: -26%;
-    right: 25%;
+    top: -35%;
+    left: 2%;
 
     }
 }
@@ -421,12 +696,12 @@ header{
     display: block;
     margin: 3% auto;
     text-align: center;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
 
     @include breakpoint($desktop){
         font-size: 2.8em;
-        text-align: right;
-        padding-right: 3%;
+        text-align: left;
+        padding-left: 7%;
         border-bottom: none;
         margin-bottom: 0;
     }
@@ -435,16 +710,42 @@ header{
 .brewer_imgs{
     display: block;
     width: 100%;
+    @include clearfix;
+
 
     @include breakpoint($desktop){
-        border-top: 3px solid $gold;
+        border-top: 2px solid $gold;
         padding-top: 3%;
     }
 
         img{
-            width: 50%;
+            width: 40%;
+            margin-right: 5%;
+            margin-left: 5%;
             float: left;
     }
+}
+
+.brewer_names{
+    @include clearfix;
+    text-align: center;
+
+    @include breakpoint($desktop){
+        text-align: left;
+    }
+}
+
+.brewer_names h2{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Homemade Apple', 'serif';
+    text-transform: none;
+
+    @include breakpoint($desktop){
+    
+}
 }
 
 .brewers_articles{
@@ -454,22 +755,40 @@ header{
         article{
             width: 40%;
             padding: 5%;
+            padding-top: 0;
             float: left;
-            font-size: 0.7em;
+            font-size: 0.9em;
 
             @include breakpoint($tablet){
             font-size: 1em;
-    }
         }
+    }
+}
+
+
+.beers_section{
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-bottom: 15%;
+
+    @include breakpoint($desktop){
+        margin-right: 0;
+        margin-left: 0;
+
+        @include clearfix;
+    
+    }
+
+        
 }
 
 .beers_title{
 
     @include breakpoint($desktop){
         position: relative;
-        border-bottom: 3px solid $gold;
+        border-bottom: 2px solid $gold;
         margin-bottom: 3%;
-        padding-left: 8%;
+        padding-left: 7%;
 
 
         @include clearfix;
@@ -477,13 +796,14 @@ header{
     }
 }
 
-.beers_title a{
+.beer_types >li{
     text-decoration: none;
-    color: #000000;
+    color: $maroon;
 }
 
 .beers_title a:hover{
     color: $gold;
+   
 
 }
 
@@ -493,7 +813,7 @@ header{
     display: block;
     margin: 3% auto;
     text-align: center;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
 
     @include breakpoint($desktop){
 
@@ -510,22 +830,25 @@ header{
 
 .beers_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    top: -30%;
+    top: -37%;
     left: 2%;
 
     }
 }
 
 .beers_title ul{
+        padding-bottom: 5%;
+        cursor: pointer;
+
       @include breakpoint($tablet){
-        width: 90%;
-        margin: 7% auto; 
+        width: 93%;
+        margin: 0 auto; 
         text-align: center;
     }
 
@@ -533,72 +856,159 @@ header{
             width: 85%;
             float: right;
             margin: 1% 0;
+            padding-bottom: 0;
         }
 }
 
 .beers_title li{
     text-transform: uppercase;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1em;
+    cursor: pointer;
 
       @include breakpoint($tablet){
-        font-size: 0.8em;
+        font-size: 0.9em;
         display: inline-block;
         padding-left: 2%;
         padding-right: 2%;
     }
 
     @include breakpoint($desktop){
-        font-size: 1.2em;
+        font-size: 1.1em;
 
     }
 }
+
+.hover{
+    display: none;
+
+    @include breakpoint($tablet){
+        cursor: pointer;
+
+        @include clearfix;
+
+        ul{
+           padding: 2%; 
+
+        
+
+        }
+
+        li{
+            display: block;
+            width: 175px;
+            font-size: 0.8em;
+            padding: 7%;
+            color: #ffffff;
+            background: $maroon;
+            text-align: left;  
+            cursor: pointer;     
+
+        }
+
+    }
+}
+
+.beer_types > li:hover ul{
+
+    @include breakpoint($tablet){
+
+
+
+        display: block;
+        position: absolute;
+        
+        margin: 0;
+        top: 90%;
+        right: 1%;
+        left: 4%;
+        z-index: 1000;
+        padding: 3%;
+        
+
+
+     }
+}
+
+.beer_types >li{
+
+    @include breakpoint($tablet){
+    position: relative;
+
+    }
+
+}
+
+.beer_types a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.beer_types a:hover{
+    color: #ffffff;
+}
+
 
 .beers_img{
     @include breakpoint($desktop){
         @include clearfix;
         width: 33.333%;
         float: left;
+        clear: both;
     }
 }
 
 .beers_img img{
     display: block;
-    width: 40%;
-    float: left;
+    width: 87%;
+    margin: 0 auto;
+    -webkit-filter: grayscale(100%); filter: grayscale(100%);
 
     @include breakpoint($desktop){
         width: 100%;
+        float: left;
         margin-left: 3%;
+    
     }
 }
 
 .beer_details{
     display: block;
-    width: 54%;
-    float: left;
+    width: 87%;
+    margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;
 
     @include breakpoint($desktop){
         width: 29%;
         margin-top: 1.2%;
+        float: left;
     }
 
         h3{
-            font-size: 1em;
+            font-size: 0.8em;
             margin-top: 0;
+        
 
         @include breakpoint($tablet){
             font-size: 1.3em;
+            
     }
         }
 
         h1{
             font-size: 1.1em;
+            font-family: 'Homemade Apple', 'serif';
+            text-transform: none;
+
+            @include breakpoint($tablet){
+                font-size: 1.7em;
+
+            }
 
             @include breakpoint($desktop){
             font-size: 1.9em;
+            margin-top: 0;
         }
         }
 
@@ -618,6 +1028,10 @@ header{
 }
 
 .beer_article{
+
+    width: 87%;
+    margin: 0 auto;
+
     @include breakpoint($desktop){
         @include clearfix;
         width: 25%;
@@ -627,10 +1041,11 @@ header{
 
 .beer_article article{
     clear: both;
-    margin: 3%;
+    margin-left: 0;
+    margin-right: 0;
     padding-top: 3%;
-    padding-bottom: 10%;
-    font-size: 0.7em;
+    padding-bottom: 0;
+    font-size: 0.9em;
 
         @include breakpoint($tablet){
         font-size: 1em;
@@ -641,21 +1056,31 @@ header{
             padding: 4%;
             margin: 0;
             width: 100%;
+            margin-left: 3%;
+            margin-right: 3%;
          
         }
 }
 
 .find_our_beer{
-    @include breakpoint($desktop){
-        @include clearfix;
-        clear: both;
+
+    padding-bottom: 15%;
+    
+        @include breakpoint($desktop){
+            @include clearfix;
+            clear: both;
+        
         
     }
 }
 
 .find_our_beer iframe{
-    width: 100%;
+    display: block;
+    width: 94%;
     margin-bottom: 5%;
+    margin: 0 auto;
+     -webkit-filter: grayscale(100%); filter: grayscale(100%);
+
 
     @include breakpoint($desktop){
         width: 60%;
@@ -673,12 +1098,12 @@ header{
     display: block;
     margin: 3% auto;
     text-align: center;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
 
     @include breakpoint($desktop){
         font-size: 2.8em;
-        text-align: right;
-        padding-right: 3%;
+        text-align: left;
+        padding-left: 7%;
         
     }
 
@@ -686,14 +1111,14 @@ header{
 
 .find_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    bottom: -42%;
-    right: 39%;
+    bottom: -50%;
+    left: 2%;
 
     }
 }
@@ -702,10 +1127,13 @@ header{
 .find_description{
     display: block;
     width: 100%;
+    margin-bottom: 5%;
+
 
     @include breakpoint($desktop){
         width: 38%;
         float: left;
+        margin-bottom: 0;
     }
         
         img{
@@ -713,22 +1141,37 @@ header{
             margin: 0 auto;
             width: 40%;
 
+            @include breakpoint($tablet){
+                width: 30%;
+            }
+
             @include breakpoint($desktop){
-                width: 70%;
+                width: 40%;
             }
         }
 
         h2{
             display: block;
-            margin: 0 auto;
+            margin: 5% 3% 5%;
             text-align: center;
 
+           
             @include breakpoint($desktop){
+                margin: 25% auto 5%;
                 width: 75%;
-                font-size: 1.8em;
+                font-size: 1.4em;
+                font-family: 'Homemade Apple', 'serif';
+                text-transform: none;
             }
         }
 
+}
+
+.events{
+
+    @include clearfix;
+    padding-bottom: 15%;
+    
 }
 
 .events_title{
@@ -743,26 +1186,26 @@ header{
     display: block;
     margin: 3% auto;
     text-align: center;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
 
     @include breakpoint($desktop){
         font-size: 2.5em;
-        text-align: right;
-        padding-right: 3%;
+        text-align: left;
+        padding-left: 7%;
     }
 
 }
 
 .events_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    bottom: -46%;
-    right: 19%;
+    bottom: -54%;
+    left: 2%;
 
     }
 }
@@ -784,6 +1227,8 @@ header{
             margin: 0 auto;
             text-align: center;
             font-size: 0.9em;
+            font-family: 'Homemade Apple', 'serif';
+            text-transform: none;
 
             @include breakpoint($desktop){
                 font-size: 1em;
@@ -800,16 +1245,24 @@ header{
 
 .tweets{
     display: block;
-    width: 50%;
+    width: 44%;
     float: left; 
+    background: #efefef;
+    margin-right: 3%;
+    padding: 1%;
+    border-left: 1.5px solid $maroon;
 
     @include breakpoint($desktop){
         width: 80%;
+        margin-right: 0;
+        padding: 0;
+        border-left: none;
+
     }
 
         p{
             margin-top: 0;
-            font-size: 0.7em;
+            font-size: 0.8em;
 
             @include breakpoint($tablet){
             font-size: 1em;
@@ -827,6 +1280,9 @@ header{
 .twitter_feed{
     margin-top: 3%;
 
+
+    @include clearfix;
+
     @include breakpoint($desktop){
         width: 100%;
         margin-bottom: 10%;
@@ -834,24 +1290,32 @@ header{
 }
 
 .balanced_brews{
+    @include clearfix;
+    margin-top: 10%;
+
+
+
+
     @include breakpoint($desktop){
-        @include clearfix;
+        
         background-image: url(../img/yoga_divider.jpg);
         background-repeat: no-repeat;
         background-size: 100%;
         margin-top: 7%;
-        border-top: 3px solid $gold;
+        border-top: 2px solid $gold;
         position: relative;
     }
 }
 
 .balanced_brews img{
     display: block;
-    width: 50%;
-    float: left;
+    width: 87%;
+    margin: 0 auto;
+    border: solid 4px #000000;
 
     @include breakpoint($desktop){
-        border: solid 4px #000000;
+
+        float: left;
         width: 35%;
         margin-left: 7%;
         margin-top: 2%;
@@ -874,20 +1338,24 @@ header{
 
 .yoga_info{
     display: block;
-    width: 44%;
-    float: left;
+    width: 87%;
     padding: 3%;
+    text-align: center;
     
 
 
     @include breakpoint($desktop){
         width: 50%;
         padding: 0;
+        float: left;
+        text-align: left;
     }
 
         h5{
             font-size: 1.1em;
             margin-top: 0;
+            font-family: 'Homemade Apple', 'serif';
+            text-transform: none;
 
             @include breakpoint($desktop){
                 width: 100%;
@@ -895,8 +1363,8 @@ header{
                 padding: 0;
                 position: absolute;
                 top: 43%;
-                left: 46%;
-                font-size: 1.1em;
+                left: 47%;
+                font-size: 2em;
             }
         }
 
@@ -904,6 +1372,8 @@ header{
 
             @include breakpoint($tablet){
             font-size: 1em;
+            font-family: 'Homemade Apple', 'serif';
+            text-transform: none;
         }
 
           @include breakpoint($desktop){
@@ -911,8 +1381,8 @@ header{
                 margin: 0;
                 padding: 0;
                 position: absolute;
-                top: 43%;
-                left: 67%;
+                top: 71%;
+                left: 45%;
                 font-size: 1.1em;
             }
     }
@@ -927,14 +1397,14 @@ header{
 .contact_title h1{
     clear: both;
     text-align: center;
-    border-bottom: 3px solid $gold;
+    border-bottom: 2px solid $gold;
     margin-top: 3%;
 
     @include breakpoint($desktop){
-        font-size: 2.5em;
+        font-size: 2.8em;
         text-align: left;
         padding-left: 3%;
-        padding-top: 10%;
+        padding-top: 0;
         padding-left: 7%;
 
     }
@@ -942,24 +1412,26 @@ header{
 
 .contact_sword{
     display: block;
-    width: 10%;
+    width: 7%;
     margin: 2% auto;
 
     @include breakpoint($desktop){
-    width: 6%;    
+    width: 5%;    
     position: absolute;
-    bottom: -19%;
+    bottom: -45%;
     left: 2%;
 
     }
 }
 
 .contact_us{
+    background: #e1e1e1;
+    padding-bottom: 3%;
+    padding-top: 3%;
+
     
     @include breakpoint($desktop){
         width: 100%;
-        background-image: url(../img/contact_form_bg.jpg);
-        background-repeat: no-repeat;
 
         @include clearfix;
         
@@ -977,14 +1449,16 @@ header{
         h4{
             text-align: center;
             margin: 3%;
+            font-family: 'Homemade Apple', 'serif';
+            text-transform: none;
 
             @include breakpoint($desktop){
                 text-align: left;
-                color: #ffffff;
-                font-size: 1.3em;
+                color: #000000;
+                font-size: 1.2em;
                 padding-top: 1%;
                 margin-bottom: 0;
-                margin-left: 6%;
+                margin-left: 10%;
             }
         }
 
@@ -998,13 +1472,15 @@ header{
                 float: left;
                 padding-left: 3%;
                 width: 60%;
-                margin-left: 3%;
+                margin-left: 7%;
 
             }
 
             input{
                 display: block;
+                width: 200px;
                 margin: 1% auto;
+            
 
                 @include breakpoint($desktop){
                     width: 93%;
@@ -1015,13 +1491,36 @@ header{
 
             button{
             display: block;
-            color: black;
-            margin: 1% auto;
+            color: #ffffff;
+            background: #000000;
+            padding: 1% 8%;
+            font-family: 'Homemade Apple', 'serif';
+            border: 2px solid white;
 
         }
 
     }
 
+}
+
+textarea{
+    width: 200px;
+    padding: 1%;
+    border: 0.5px inset #efefef;
+    margin-top: 5%;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+
+    @include breakpoint($desktop){
+        margin-left: 0;
+        width: 374px;
+        max-width: 374px;
+        max-height: 132px;
+        margin-bottom: 2%;
+        
+    }
+    
 }
 
 .contact_form input:nth-child(1){
@@ -1054,8 +1553,6 @@ header{
     margin-right: 2%;
     padding: 1%;
 
-
-
     }
 
 }
@@ -1076,8 +1573,13 @@ header{
 
 .contact_us button{
     clear: both;
-    float: left;
+    margin: 2% auto;
     padding: 1%;
+
+
+    @include breakpoint($desktop){
+        float: left;
+    }
 }
 .contact_info{
     display: none;
@@ -1086,8 +1588,8 @@ header{
         display: block;
         width: 30%;
         float: left;
-        color: #ffffff;
-        font-size: 0.7em;
+        color: #000000;
+        font-size: 0.8em;
         text-align: left;
         margin-left: 0 auto;
         margin-top: 2%;
@@ -1099,9 +1601,9 @@ header{
         padding-top: 3%;
         padding-bottom: 3%;
         margin-bottom: 20%;
-        margin-top: 20%; 
-        border-top: 3px solid $gold;
-        border-bottom: 3px solid $gold;
+        margin-top: 10%; 
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
 
         @include breakpoint($desktop){
             clear: both;
@@ -1113,25 +1615,52 @@ header{
             display: block;
             margin: 0 auto;
             text-align: center;
-            text-transform: uppercase;
+            width: 60%;
+
+            @include breakpoint($tablet){
+                width: 30%;
+            }
+
+            @include breakpoint($desktop){
+                width: 100%;
+            }
+
 
             a{
                 text-decoration: none;
-                color: #000000;
+                color: $maroon;
+                text-transform: uppercase;
+                display: block;
+                padding: 0.2em 0.5em;
+                border: 1px solid $maroon;
+                font-size: 1.1em;
+
+                
+
+
+
             }
     }
 }
 
 .secondary_navigation li{
 
+    padding: 1.5%;
+
         @include breakpoint($desktop){
+        padding: 0;    
         display: inline-block;
-        padding-left: 1%;
-        padding-right: 1%;
+        margin: 0.5%;
         font-size: 1.2em;
     }
 
 
+}
+
+.secondary_navigation a:hover{
+    color: #ffffff;
+    background: #000000;
+   
 }
 
 .footer_nav{
@@ -1139,6 +1668,7 @@ header{
         display: block;
         width: 95%;
         margin: 0 auto;
+        text-align: center;
 
             @include breakpoint($desktop){
                 text-align: center;
@@ -1147,8 +1677,9 @@ header{
         li{
             display: inline-block;
             width: 13%;
-            font-size: 0.6em;
+            font-size: 0.5em;
             text-align: center;
+
 
             @include breakpoint($desktop){
                 font-size: 1em;
@@ -1158,11 +1689,14 @@ header{
         }
 
         a{
-            color: #000000;
+            color: $maroon;
             text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1em;
     }
 
 }
+
 
 .fine_print{
 
@@ -1173,7 +1707,7 @@ header{
     }
 
     li{
-        font-size: 0.6em;
+        font-size: 0.7em;
         text-align: center;
 
         @include breakpoint($desktop){
@@ -1183,24 +1717,47 @@ header{
 
 }
 
+.footer_nav img{
+    width: 30%;
+
+    @include breakpoint($tablet){
+        width: 25%;
+    }
+
+    @include breakpoint($desktop){
+        width: 50%;
+    }
+}
+
 .footer_nav li:nth-child(3){
+
+    @include breakpoint($desktop){
     width: 4%;
+    }
 
 }
 .footer_nav li:nth-child(4){
+    
+    @include breakpoint($desktop){
     width: 4%;
-
+    }
 }
 .footer_nav li:nth-child(5){
-    width: 4%;
 
+    @include breakpoint($desktop){
+    width: 4%;
+    }
 }
 
 footer p{
 
-    font-size: 0.6em;
+    font-size: 0.7em;
     text-align: center;
     padding-top: 10%;
+
+    @include breakpoint($tablet){
+        padding-top: 2%;
+    }
 
     @include breakpoint($desktop){
         font-size: 0.8em;
